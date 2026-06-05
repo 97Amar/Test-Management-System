@@ -8,13 +8,11 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="auth-layout">
             <Row className="auth-layout__row">
-                {/* <Col lg={6} className="auth-layout__left"> */}
-                <Col lg={6} md={6} sm={6} xs={6}>
+                <Col lg={6} md={6} sm={6} xs={6} className="auth-layout__left">
                     <LoginBanner />
                 </Col>
 
-                {/* <Col lg={6} xs={12} className="auth-layout__right"> */}
-                <Col lg={6} md={6} sm={6} xs={6}>
+                <Col lg={6} md={6} sm={6} xs={6} className="auth-layout__right">
                     <AuthCard>
                         {children}
                     </AuthCard>
