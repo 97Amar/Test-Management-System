@@ -5,7 +5,7 @@ import CommonButton from '../../../../../components/common/Button/CommonButton';
 import SelectField from '../../../../../components/common/formik/selectField/selectField';
 import { ROUTES } from '../../../../../constants/constants';
 import { useThrottle } from '../../../../../utils/helpers';
-import './testPublishWindow.scss';
+import './TestPublishWindow.scss';
 
 interface Props {
     mode?: 'publish' | 'schedule';
