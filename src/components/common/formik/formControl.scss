@@ -1,0 +1,194 @@
+@use 'sass:color';
+@use '@assets/scss/variables' as *;
+
+
+// ==========================================
+// Form Control Styles (Mapped to actual DOM structure)
+// ==========================================
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 1.25rem;
+
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #101828 !important;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+
+  .form-control {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border-radius: 8px;
+    border: 1px solid #d0d5dd;
+    background: #fff;
+    color: #101828;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    outline: none;
+    appearance: none;
+
+    &::placeholder {
+      color: #98a2b3;
+    }
+
+    &:focus {
+      border-color: $primary;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba($primary, 0.15);
+    }
+
+
+    &.is-invalid {
+      border-color: #ef4444;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+      }
+    }
+
+    &:disabled {
+      background: #f9fafb;
+      color: #98a2b3;
+      cursor: not-allowed;
+      border-color: #f2f4f7;
+    }
+  }
+
+  &.passfield .form-control,
+  &.datepicker-field .form-control {
+    padding-right: 3.5rem;
+  }
+
+  &_inner {
+    position: relative;
+    width: 100%;
+  }
+
+  &_passbtn {
+    position: absolute;
+    right: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    z-index: 2;
+
+    &:hover {
+      color: $primary;
+    }
+
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .error-message {
+    color: $danger;
+    font-size: 0.72rem;
+    margin-top: 0.4rem;
+    font-weight: 500;
+  }
+
+  .form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    .form-check-input {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-top: 0;
+
+      &:checked {
+        background-color: $primary;
+        border-color: $primary;
+      }
+
+    }
+
+    .form-check-label {
+      margin-bottom: 0;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.5);
+
+      span {
+        color: $primary;
+      }
+
+    }
+  }
+
+  &_btm_title {
+    margin-top: 0.5rem;
+  }
+}
+
+.form-field__label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.9rem;
+}
+
+.form-field__link-btn {
+  background: none;
+  border: none;
+  color: $primary;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  font-family: $font-family-base;
+  transition: color 0.2s;
+
+  &:hover {
+    color: color.adjust($primary, $lightness: -10%);
+  }
+
+}
+
+// ==========================================
+// OTP Input (special)
+// ==========================================
+.otp-input {
+  text-align: center;
+  letter-spacing: 0.9rem;
+  font-size: 1.75rem;
+  font-weight: 800;
+  padding: 1.1rem;
+}
+
+.disabled_cursor {
+  cursor: not-allowed !important;
+}
+
+textarea.form-control {
+  min-height: 100px;
+}

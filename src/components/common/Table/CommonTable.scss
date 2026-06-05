@@ -1,0 +1,161 @@
+@use '../../../assets/scss/mixins' as *;
+
+.table_box {
+    background: $white;
+    border-radius: $border-radius-xl;
+    box-shadow: $card-shadow;
+    overflow: hidden;
+    margin-top: 1rem;
+
+    .table_box_tabs {
+        border-bottom: 1.5px solid $border-color;
+        padding: 0 1rem;
+
+        .nav-item {
+            .nav-link {
+                border: none;
+                color: $text-secondary;
+                font-weight: $font-weight-medium;
+                padding: 1rem 1.25rem;
+                position: relative;
+                @include transition();
+
+                &:hover {
+                    color: $primary;
+                }
+
+                &.active {
+                    color: $primary;
+                    background: transparent;
+
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        height: 3px;
+                        background: $primary;
+                        border-radius: 3px 3px 0 0;
+
+                    }
+                }
+            }
+        }
+    }
+
+    .table_box_head {
+        padding: 1.25rem 1.5rem;
+        border-bottom: 1px solid $border-color;
+
+        .table_title {
+            font-size: $font-size-lg;
+            font-weight: $font-weight-bold;
+            margin: 0;
+            color: $text-primary;
+        }
+    }
+
+    .table {
+        margin-bottom: 0;
+
+        thead {
+            tr {
+                th {
+                    background: $bg-light;
+                    color: $text-secondary;
+                    font-weight: $font-weight-semibold;
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.5px;
+                    padding: 1rem 1.5rem;
+                    border-bottom: 1.5px solid $border-color;
+                    white-space: nowrap;
+
+                    .filter-btn {
+                        background: none;
+                        border: none;
+                        color: $text-muted;
+                        margin-left: 0.5rem;
+                        font-size: 10px;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $text-primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                @include transition();
+
+                &:hover {
+                    background-color: rgba($primary, 0.02);
+                }
+
+
+                td {
+                    padding: 1.25rem 1.5rem;
+                    vertical-align: middle;
+                    border-bottom: 1px solid $border-color;
+                    color: $text-primary;
+                    font-size: $font-size-base;
+                }
+
+                &:last-child {
+                    td {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .no_record {
+        text-align: center;
+        padding: 3rem 1rem;
+        color: $text-muted;
+
+        p {
+            margin-top: 1rem;
+            font-weight: $font-weight-medium;
+        }
+    }
+}
+
+/* Custom class for table within tabs */
+.tab_table {
+    border-top: none;
+}
+
+/* Skeleton / Placeholder overrides */
+.placeholder {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #e5e7eb; // Default light gray
+    opacity: 0.6;
+
+    &-glow {
+        .placeholder {
+            animation: placeholder-glow 2s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes placeholder-glow {
+    0% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}

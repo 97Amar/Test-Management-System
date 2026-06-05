@@ -1,0 +1,93 @@
+@use '@assets/scss/mixins' as *;
+
+.create-test-container {
+  padding: 24px;
+  background: $bg-light;
+}
+
+.test-form-card {
+  background: $white;
+  border-radius: $border-radius;
+  padding: 32px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .test-form-card {
+    padding: 16px;
+  }
+}
+
+.form-section .section-title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .form-section .row>div {
+    margin-bottom: 12px;
+  }
+}
+
+.difficulty-label {
+  display: block;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $text-primary;
+  margin-bottom: 12px;
+}
+
+.difficulty-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  min-height: 42px;
+}
+
+.difficulty-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  span {
+    font-size: $font-size-base;
+    color: $text-primary;
+  }
+
+  input[type='radio'] {
+    width: 16px;
+    height: 16px;
+    accent-color: $primary;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+.marking-scheme {
+
+  .form-label,
+  label {
+    display: flex;
+    align-items: flex-start;
+    min-height: 48px;
+    margin-bottom: 8px;
+  }
+}

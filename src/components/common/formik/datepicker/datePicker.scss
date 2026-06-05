@@ -1,0 +1,35 @@
+@use "react-calendar/dist/Calendar.css";
+@use "react-datetime-picker/dist/DateTimePicker.css";
+
+.common_datetime {
+    margin-bottom: 20px;
+
+    .common_datetime_wrapper {
+        position: relative;
+
+        .placeholder-text {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        &.has-value .placeholder-text {
+            display: none;
+        }
+    }
+
+    .react-datetime-picker {
+        width: 100%;
+
+        &__wrapper {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 5px 10px;
+            min-height: 40px;
+        }
+    }
+}

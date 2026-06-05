@@ -1,0 +1,61 @@
+@use '../../../assets/scss/mixins' as *;
+
+.common-btn {
+    height: 48px;
+    min-height: 48px;
+    background-color: $primary !important;
+    color: $white !important;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 0 24px;
+
+    border: none !important;
+    border-radius: $border-radius;
+
+    font-family: $font-family-base;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+
+    cursor: pointer;
+    @include transition();
+
+    &:hover,
+    &:focus {
+        background-color: $primary-dark !important;
+        color: $white !important;
+        box-shadow: $shadow-sm !important;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    // Cancel Button Variant
+    &.btn-cancel {
+        background: $primary-logo !important;
+        color: $white !important;
+
+        &:hover {
+            background: #2a3a95 !important; // Darker shade of logo color
+        }
+    }
+
+
+    &.btn-light {
+        background: #F8FAFF !important;
+        color: $primary-logo !important;
+    }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .common-btn {
+        min-height: 44px;
+        font-size: 13px;
+    }
+}

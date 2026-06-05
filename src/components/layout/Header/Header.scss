@@ -1,0 +1,165 @@
+@use '@assets/scss/mixins' as *;
+
+.main-header {
+    height: 92px;
+    min-height: 92px;
+
+    background: $white;
+    border-bottom: 1px solid $border-color;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 0 24px;
+
+    flex-shrink: 0;
+}
+
+.header-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification-btn {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid $border-color;
+    border-radius: 50%;
+    background: $white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    svg {
+        color: $text-primary;
+    }
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid $accent;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $text-primary;
+}
+
+.user-role {
+    font-size: $font-size-sm;
+    color: $text-secondary;
+}
+
+.chevron-icon {
+    color: $text-secondary;
+    transition: transform 0.2s ease;
+
+    &.rotate {
+        transform: rotate(180deg);
+    }
+}
+
+.user-profile-wrapper {
+    position: relative;
+}
+
+.header-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    min-width: 160px;
+    background: $white;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    box-shadow: $shadow-md;
+    padding: 8px;
+    z-index: 1000;
+    animation: slideDown 0.2s ease-out;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        right: 14px;
+        width: 10px;
+        height: 10px;
+        background: $white;
+        border-left: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        transform: rotate(45deg);
+    }
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    color: $text-primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: $bg-light;
+    }
+
+    &.logout {
+        color: $danger;
+
+        &:hover {
+            background: rgba($danger, 0.06);
+        }
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

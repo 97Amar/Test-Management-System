@@ -1,0 +1,27 @@
+.auth-banner {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+
+  &__image {
+    width: 100%;
+    max-width: 500px;
+    max-height: 80vh;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 992px) {
+  .auth-banner {
+    padding: 1rem;
+  }
+
+  .auth-banner__image {
+    max-width: 400px;
+  }
+}

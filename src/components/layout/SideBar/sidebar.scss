@@ -1,0 +1,79 @@
+@use '@assets/scss/mixins' as *;
+
+.sidebar {
+    width: 240px;
+    min-width: 240px;
+    height: 100vh;
+
+    background: $white;
+    border-right: 1px solid $border-color;
+
+    overflow: hidden;
+}
+
+.sidebar-logo {
+    height: 88px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid $bg-primary;
+}
+
+.sidebar-logo-image {
+    width: 130px;
+    height: auto;
+    object-fit: contain;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 12px;
+}
+
+.nav-item {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    border-radius: $border-radius-sm;
+    text-decoration: none;
+    color: $text-secondary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: $bg-light;
+    }
+
+    &.active {
+        background: rgba($primary, 0.08);
+        color: $primary;
+        font-weight: $font-weight-semibold;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: $primary;
+            border-radius: 0 4px 4px 0;
+        }
+    }
+}
+
+.nav-icon {
+    width: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-label {
+    white-space: nowrap;
+}

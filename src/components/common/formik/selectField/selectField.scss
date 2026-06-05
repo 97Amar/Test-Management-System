@@ -1,0 +1,52 @@
+.form__control {
+  min-height: 48px !important;
+  height: 48px !important;
+  border-radius: 8px !important;
+  border: 1px solid #d0d5dd !important;
+  background: #fff !important;
+  box-shadow: none !important;
+
+  &:hover {
+    border-color: #d0d5dd !important;
+  }
+}
+
+.form__control--is-disabled {
+  background: #f9fafb !important;
+  border-color: #f2f4f7 !important;
+  cursor: not-allowed !important;
+
+  .form__placeholder {
+    color: #d0d5dd !important;
+  }
+}
+
+
+.form__value-container {
+  height: 48px !important;
+  padding: 0 14px !important;
+}
+
+.form__placeholder {
+  color: #98a2b3 !important;
+  font-size: 14px !important;
+}
+
+.form__single-value {
+  color: #101828 !important;
+  font-size: 14px !important;
+}
+
+.form__indicator-separator {
+  display: none !important;
+}
+
+.form__dropdown-indicator {
+  color: #98a2b3 !important;
+}
+
+.form__menu {
+  border-radius: 8px !important;
+  overflow: hidden;
+  z-index: 9999;
+}

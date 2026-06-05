@@ -1,0 +1,109 @@
+@use 'common' as *;
+
+// Google Font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none !important;
+    touch-action: pan-y !important;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    color: $text-primary;
+    background-color: $bg-light;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: $bg-light;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $border-color;
+    border-radius: 4px;
+
+    &:hover {
+        background: $text-muted;
+    }
+}
+
+// Bootstrap overrides
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover,
+    &:focus {
+        background-color: $primary-dark;
+        border-color: $primary-dark;
+    }
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.12);
+}
+
+// React DatePicker
+.react-datepicker-wrapper {
+    width: 100%;
+}
+
+.react-datepicker__input-container input {
+    width: 100%;
+    height: $input-height;
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    padding: 0 14px;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    color: $text-primary;
+    background: $white;
+    @include transition();
+
+    &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 0 3px rgba($primary, 0.12);
+        outline: none;
+    }
+}
+
+// React Quill
+.ql-toolbar {
+    border-radius: $border-radius $border-radius 0 0 !important;
+    border-color: $border-color !important;
+}
+
+.ql-container {
+    border-radius: 0 0 $border-radius $border-radius !important;
+    border-color: $border-color !important;
+    min-height: 140px;
+    font-family: $font-family-base !important;
+    font-size: $font-size-base !important;
+}

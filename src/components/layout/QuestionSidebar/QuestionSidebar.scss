@@ -1,0 +1,142 @@
+@use '../../../assets/scss/mixins' as *;
+
+
+.question_sidebar {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: $white;
+    border-right: 1px solid $border-color;
+
+    .my_logo {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid $border-color;
+        cursor: pointer;
+
+        .sidebar-logo-image {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .question_sidebar_main {
+        flex-grow: 1;
+        display: flex;
+        overflow: hidden;
+
+        .question_left {
+            width: 60px;
+            border-right: 1px solid $border-color;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+
+            .icons {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                color: $text-secondary;
+
+                &:hover {
+                    color: $success;
+                }
+
+            }
+        }
+
+        .questions_right {
+            padding: 20px 15px;
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+
+            h3 {
+                color: $text-secondary;
+                font-weight: $font-weight-medium;
+                font-size: $font-size-base;
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            h4 {
+                margin: 30px 0;
+                font-weight: $font-weight-normal;
+                color: $text-secondary;
+                font-size: $font-size-base;
+
+                span {
+                    font-weight: $font-weight-medium;
+                }
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    border: 1px solid $success;
+                    border-radius: $border-radius-sm;
+                    padding: 8px 10px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: $success;
+
+
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+
+                    span {
+                        margin-left: auto;
+
+                        svg {
+                            transform: rotate(180deg);
+
+                            path {
+                                &:not(:first-child) {
+                                    fill: $success;
+                                }
+                            }
+
+                        }
+                    }
+
+                    &.dismiss {
+                        border-color: $border-color;
+                        color: $text-muted;
+
+                        span {
+                            svg {
+                                path {
+                                    &:not(:first-child) {
+                                        fill: $text-muted !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

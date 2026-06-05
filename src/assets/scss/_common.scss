@@ -1,0 +1,243 @@
+@forward 'mixins';
+@use 'mixins' as *;
+
+// Form group
+.form-group-custom {
+    @include flex-col;
+    gap: 8px;
+
+    label {
+        font-size: $font-size-base;
+        font-weight: $font-weight-medium;
+        color: $text-primary;
+    }
+
+    .form-control,
+    .form-select {
+        height: $input-height;
+        border-radius: $border-radius;
+        border: 1px solid $border-color;
+        font-size: $font-size-base;
+        color: $text-primary;
+        background: $white;
+        padding: 0 14px;
+        @include transition();
+
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 3px rgba($primary, 0.12);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $text-muted;
+        }
+
+        &.is-invalid {
+            border-color: $danger;
+        }
+    }
+
+    textarea.form-control {
+        height: auto;
+        padding: 12px 14px;
+        resize: vertical;
+    }
+
+    .error-msg {
+        font-size: $font-size-sm;
+        color: $danger;
+        margin-top: 2px;
+    }
+}
+
+// Page title
+.page-title {
+    font-size: 20px;
+    font-weight: $font-weight-bold;
+    color: $text-primary;
+    margin-bottom: 0;
+}
+
+// Reusable Status Badges (used in tests table/cards)
+.status-draft {
+    color: #D97706;
+    background-color: #FEF3C7;
+}
+
+.status-live {
+    color: $success;
+    background-color: #D1FAE5;
+}
+
+.status-published {
+    color: $primary;
+    background-color: rgba($primary, 0.1);
+}
+
+.page-subtitle {
+    font-size: $font-size-base;
+    color: $text-secondary;
+}
+
+// Section card
+.section-card {
+    @include card;
+    margin-bottom: 1.5rem;
+}
+
+// Divider
+.divider {
+    border: none;
+    border-top: 1px solid $border-color;
+    margin: 1.25rem 0;
+}
+
+// Reusable Stat Card
+.stat-card {
+    background: $white;
+    border-radius: $border-radius-lg;
+    padding: 1.25rem 1.5rem;
+    box-shadow: $shadow-sm;
+    border: 1px solid $border-color; // subtle border around it
+    display: flex;
+    flex-direction: column;
+
+    .stat-value {
+        font-size: 28px;
+        font-weight: $font-weight-bold;
+        margin: 0 0 4px;
+        line-height: 1;
+    }
+
+    .stat-label {
+        font-size: $font-size-sm;
+        color: $text-secondary;
+        margin: 0;
+        font-weight: $font-weight-medium;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Color Modifiers */
+    &--primary {
+        border-left: 4px solid $primary;
+
+        .stat-value {
+            color: $primary;
+        }
+    }
+
+    &--success {
+        border-left: 4px solid $success;
+
+        .stat-value {
+            color: $success;
+        }
+    }
+
+    &--warning {
+        border-left: 4px solid $accent;
+
+        .stat-value {
+            color: #D97706; // Darker amber for readability
+        }
+    }
+}
+
+
+/* ────────────────────────────────────────────────
+   Shared icon-only action buttons
+   Used in: table actions column + TestCard footer
+──────────────────────────────────────────────── */
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: $border-radius;
+    border: 1.5px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+    flex-shrink: 0;
+
+    svg {
+        width: 14px;
+        height: 14px;
+        display: block;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    /* Edit – brand primary */
+    &--edit {
+        color: $primary;
+        border-color: rgba($primary, 0.3);
+        background: rgba($primary, 0.08);
+
+        &:hover:not(:disabled) {
+            background: rgba($primary, 0.18);
+            border-color: $primary;
+        }
+    }
+
+    /* Questions – teal/success */
+    &--questions {
+        color: $success;
+        border-color: rgba($success, 0.3);
+        background: rgba($success, 0.08);
+
+        &:hover:not(:disabled) {
+            background: rgba($success, 0.18);
+            border-color: $success;
+        }
+    }
+
+
+
+    /* Delete – red */
+    &--delete {
+        color: #DC2626;
+        border-color: #FECACA;
+        background: #FEF2F2;
+
+        &:hover:not(:disabled) {
+            background: #FECACA;
+            border-color: #DC2626;
+        }
+    }
+
+    /* Spinner shown when deleting */
+    &__spinner {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        border: 2px solid #DC2626;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: icon-btn-spin 0.7s linear infinite;
+    }
+}
+
+@keyframes icon-btn-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.required-asterisk {
+    color: #DC2626;
+    margin-left: 4px;
+    font-weight: bold;
+}

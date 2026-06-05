@@ -1,0 +1,54 @@
+// ==========================================
+// Core Brand Colors (Student App Theme)
+// ==========================================
+$primary: #7489FF; // Brand Primary — buttons, focus rings, links
+$primary-dark: #5988EF; // Slightly darker primary for hover
+$primary-logo: #384EC7; // Brand Logo color — Cancel button bg
+$success: #0C9D61; // Semantic success (green)
+$accent: #FFC82C; // Topics / Sub-topics accent (yellow)
+$difficulty: #2AB7A9; // Easy / Hard test mode badges (teal)
+
+// Standard UI Palette
+$danger: #EF4444;
+$warning: #FFC82C;
+$info: #3B82F6;
+$white: #FFFFFF;
+$dark: #111827;
+
+// Grays & Neutrals
+$border-color: #E2E8F0;
+$text-primary: #1E293B;
+$text-secondary: #64748B;
+$text-muted: #94A3B8;
+$bg-light: #F8FAFC;
+$bg-primary: #F1F5F9;
+
+// Typography
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-display: 'Outfit', sans-serif;
+$font-size-base: 14px;
+$font-size-sm: 12px;
+$font-size-lg: 16px;
+$font-size-xl: 20px;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Layout
+$sidebar-width: 260px;
+$header-height: 64px;
+$input-height: 48px;
+$border-radius: 12px;
+$border-radius-sm: 8px;
+$border-radius-lg: 16px;
+$border-radius-xl: 20px;
+
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.14);
+$card-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
